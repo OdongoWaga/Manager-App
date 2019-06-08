@@ -1,11 +1,27 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import ReactDOM from 'react-dom';
 import Header from './layouts/Header';
+import Dashboard from './leads/Das'
+import {
+  Provider
+} from 'react-redux';
+import store from '../store';
 
 class App extends Component {
   render() {
-    return <Header />;
+    return (
+      <Provider store={store}>
+        <Fragment>
+          <Header/>
+          <div className="container">
+            <Dashboard/>
+          </div>
+        </Fragment>
+      </Provider>
+    ) ;
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render( < App /> , document.getElementById('app'));
