@@ -8,7 +8,10 @@ export default function(state = initialState, action) {
     switch(action.type) {
         case GET_LEADS:
             return{
-                ...state
+                ...state,
+                leads: action.payload
             }
+            default:
+                return state;
     }
 }
